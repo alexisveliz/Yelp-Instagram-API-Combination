@@ -1,6 +1,7 @@
-Implemented independant api from a MIT lincesed to downlaod pictures 
+Implemented Independent API from a MIT lincesed to downlaod pictures 
 from different accounts that we might create or find public.
 
 Obstacles: I'm not using instagram's API developer account because it's  
 new policies are to hard to get around, instead I'm using an independent API at my own risk.
 
+SOURCE: https://instaloader.github.io/as-module.html#module-instaloader
