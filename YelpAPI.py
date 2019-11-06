@@ -1,4 +1,4 @@
-# Implementation by Haley Anderson 
+# Implementation by Haley Anderson
 
 """
 Yelp Fusion API code sample.
@@ -51,12 +51,6 @@ SEARCH_PATH = '/v3/businesses/search'
 BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 
 
-# Defaults for our simple example.
-DEFAULT_TERM = 'dinner'
-DEFAULT_LOCATION = 'San Francisco, CA'
-SEARCH_LIMIT = 3
-
-
 def request(host, path, api_key, url_params=None):
     """Given your API_KEY, send a GET request to the API.
     Args:
@@ -79,7 +73,11 @@ def request(host, path, api_key, url_params=None):
 
     response = requests.request('GET', url, headers=headers, params=url_params)
 
-    return response.json()
+    return translateJson(response.json())
+
+def translateJson(response):
+    # Implement method to print relevant info from Json
+    return response
 
 
 def search(api_key, term, location):
@@ -137,6 +135,11 @@ def query_api(term, location):
 
 
 def main():
+    # Defaults for example main
+    DEFAULT_TERM = 'dinner'
+    DEFAULT_LOCATION = 'San Francisco, CA'
+    SEARCH_LIMIT = 3
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-q', '--term', dest='term', default=DEFAULT_TERM,
@@ -161,3 +164,12 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# keysYelp API Keys
+
+#Client ID
+#rJJff6pwpjdHJWV_Jp8Zkw
+
+#API Key
+#VP826kbeAL3mlMzn1OhrM-OawKwQqdmP1qQv8anlITTkPjANYBJXVxcufX3K2h-643DQmwwbL36nZ-Eq2JA1kNCzrnUPHMIQTk2ixpWEL9-87OTT5DHj7iedt3i4XXYx
