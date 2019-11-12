@@ -73,10 +73,21 @@ def request(host, path, api_key, url_params=None):
 
     response = requests.request('GET', url, headers=headers, params=url_params)
 
-    return translateJson(response.json())
+    response = response.json()
+
+    return translateJson(response)
 
 def translateJson(response):
-    # Implement method to print relevant info from Json
+    name = response['name']
+    categories = response['categories']['title']
+    location = response['location']['display_address']
+    phone = response['display_phone']
+    #hours = json_response
+
+    print(name)
+    print(categories)
+    print(location)
+    print(phone)
     return response
 
 
