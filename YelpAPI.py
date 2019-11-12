@@ -89,6 +89,8 @@ def search(api_key, term, location):
         dict: The JSON response from the request.
     """
 
+    SEARCH_LIMIT = 5
+
     url_params = {
         'term': term.replace(' ', '+'),
         'location': location.replace(' ', '+'),
