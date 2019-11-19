@@ -1,3 +1,4 @@
+/*DEFAULT STYLES*/
 .container {
     width: 50%;
     margin: 4vh auto;
@@ -5,4 +6,26 @@
     padding: 1vh 50px;
     border-radius: 20px;
     border: black 1pt solid;
+}
+
+/*SEARCH*/
+.titles {
+    text-align: center;
+}
+
+.search_info {
+    width: 98%;
+    margin: 30px 0px 1px 2%;
+}
+
+#search input {
+    width: 98%;
+    height: 40px;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    border: none;
+    background-color: orange;
 }
