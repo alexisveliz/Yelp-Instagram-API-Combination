@@ -4,4 +4,6 @@ from different accounts that we might create or find public.
 Obstacles: I'm not using instagram's API developer account because it's  
 new policies are to hard to get around, instead I'm using an independent API at my own risk.
 
+Helped implement script that downloads pictures from instagram and saves on file.
+
 SOURCE: https://instaloader.github.io/as-module.html#module-instaloader
