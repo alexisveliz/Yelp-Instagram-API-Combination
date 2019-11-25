@@ -6,6 +6,7 @@ TO RUN:
 Currently, the project is still fragmented and will not be fully combined until the final submission.
 
 To run the Yelp API, run Connection.py and specify which location and search terms you would like to use.
+For now this returns a Json response which is not very user friendly. For the final submission, this will return readable text.
 
 To run the Instagram API, run ConnectionInstagramScript.py the error that appears in command line is just a warning the pictures should download in a folder called: "restaurantvibess" in your computer.
 
