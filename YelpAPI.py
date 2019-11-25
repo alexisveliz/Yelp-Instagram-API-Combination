@@ -21,6 +21,7 @@ import pprint
 import requests
 import sys
 import urllib
+import json
 
 
 # This client code can run on Python 2.x or 3.x.  Your imports can be
@@ -75,19 +76,22 @@ def request(host, path, api_key, url_params=None):
 
     response = response.json()
 
-    return translateJson(response)
+    #return translateJson(response)
+    return response
 
 def translateJson(response):
-    name = response['name']
-    categories = response['categories']['title']
-    location = response['location']['display_address']
-    phone = response['display_phone']
+    jsonResponse = json.dumps(response)
+    name = jsonResponse['name']
+    categories = jsonResponse["categories"]["title"]
+    location = jsonResponse["location"]["display_address"]
+    phone = jsonResponse["display_phone"]
     #hours = json_response
 
     print(name)
     print(categories)
     print(location)
     print(phone)
+
     return response
 
 
