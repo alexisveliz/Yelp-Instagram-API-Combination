@@ -76,7 +76,8 @@ def request(host, path, api_key, url_params=None):
 
     response = response.json()
 
-    return translateJson(response)
+    #return translateJson(response)
+    return response
 
 def translateJson(response):
     jsonResponse = json.dumps(response)
