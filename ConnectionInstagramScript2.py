@@ -1,3 +1,5 @@
+#script that gets keywords from yelp, passes and converts it into search  location command for the api
+# Implementation Alejandro, Haley Anderson and Elise May
 
 class LoginError(Exception):
    """No need to login in account"""
