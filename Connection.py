@@ -32,3 +32,5 @@ def YelpSearch(location, term):
                 error.read(),
             )
         )
+
+print(YelpSearch('los angeles','thai'))
