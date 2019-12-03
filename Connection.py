@@ -32,5 +32,3 @@ def YelpSearch(location, term):
                 error.read(),
             )
         )
-        
-YelpSearch("Seattle", "thai")
