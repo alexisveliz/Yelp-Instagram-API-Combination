@@ -8,8 +8,6 @@ import requests
 # term = input("What kind of food are you looking for?\nExamples: bars, dinner, Thai, etc\nResponse: ")
 # Sample inputs for testing only
 
-YelpSearch(Seattle, bars)
-
 def YelpSearch(location, term):
     SEARCH_LIMIT = 5
 
@@ -33,3 +31,5 @@ def YelpSearch(location, term):
                 error.read(),
             )
         )
+        
+YelpSearch(Seattle, bars)
