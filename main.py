@@ -7,6 +7,8 @@
 from bottle import route, template, request, static_file, run #http://bottlepy.org
 import Connection as Connection
 
+restaurant = ""
+
 # adds the main CSS styles
 @route('/style.css')
 def server_static(filepath="style.css"):
@@ -43,14 +45,15 @@ def search():
 def show_results():
     term = request.forms.get('term')
     location = request.forms.get('location')
-    print(Connection.YelpSearch(location,term))
-    return "done"
+    results_dict = Connection.YelpSearch(location,term)
+    restaurant_link = "<a href=/restaurant>" + results_dict['name'] + "</a>"
+    return template('base', code=restaurant_link)
     
 
 #TODO: Create a template that gets Instagram images and Yelp info and displays them
-@route('/<restaurant>')
-def show_info(restaurant):
-    return 'Nothing here yet'
+@route('/restaurant')
+def show_info():
+    return template('base', code="Results")
 
 # Generates the webpages at http://localhost:8080 in debug mode
 run(host='localhost', port=8080, debug=True)
