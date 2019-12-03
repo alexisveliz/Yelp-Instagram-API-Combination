@@ -5,6 +5,7 @@
 # Date: November 19, 2019
 
 from bottle import route, template, request, static_file, run #http://bottlepy.org
+import Connection as Connection
 
 # adds the main CSS styles
 @route('/style.css')
@@ -21,8 +22,16 @@ def search():
             <h2>Search</h3>
         </div>
         <form id="search" action="/results" method="post">
-            <div class="search_info">Term: </div><input name="term" type="text" />
-            <div class="search_info">Location: </div><input name="location" type="text" />
+            <div class="search_info">Term: </div>
+            <select name="term">
+                <option value="thai">Thai</option>
+            </select>
+            <div class="search_info">Location: </div>
+            <select name="location">
+                <option value="los angeles">Los Angeles</option>
+                <option value="san francisco">San Francisco</option>
+                <option value="seattle">Seattle</option>
+            </select>
             <input value="Search" type="submit" />
         </form>
     '''
@@ -34,8 +43,9 @@ def search():
 def show_results():
     term = request.forms.get('term')
     location = request.forms.get('location')
-    results = '<p>You searched for {0} in {1}</p>'.format(term,location)
-    return template('base', code=results)
+    print(Connection.YelpSearch(location,term))
+    return "done"
+    
 
 #TODO: Create a template that gets Instagram images and Yelp info and displays them
 @route('/<restaurant>')
