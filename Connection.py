@@ -4,8 +4,11 @@ import YelpAPI as YelpAPI
 import argparse
 import requests
 
-location = input("Where are you looking to eat?\nCurrently Supported Locations: Los Angeles, San Francisco, Seattle\nLocation: ")
-term = input("What kind of food are you looking for?\nExamples: bars, dinner, Thai, etc\nResponse: ")
+# location = input("Where are you looking to eat?\nCurrently Supported Locations: Los Angeles, San Francisco, Seattle\nLocation: ")
+# term = input("What kind of food are you looking for?\nExamples: bars, dinner, Thai, etc\nResponse: ")
+# Sample inputs for testing only
+
+YelpSearch(Seattle, bars)
 
 def YelpSearch(location, term):
     SEARCH_LIMIT = 5
