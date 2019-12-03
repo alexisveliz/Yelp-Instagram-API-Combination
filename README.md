@@ -3,8 +3,6 @@
 This app uses Yelp API and Instagram API to display photos and reviews for a restaurant to get a feeling of what the place is like.
 
 TO RUN:
-Currently, the project is still fragmented and will not be fully combined until the final submission.
-
 To run the Yelp API, run Connection.py and specify which location and search terms you would like to use.
 For now this returns a Json response which is not very user friendly. For the final submission, this will return readable text.
 
