@@ -32,4 +32,4 @@ def YelpSearch(location, term):
             )
         )
         
-YelpSearch(Seattle, bars)
+YelpSearch("Seattle", "bars")
