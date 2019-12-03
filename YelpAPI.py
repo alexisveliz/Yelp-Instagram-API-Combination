@@ -1,4 +1,4 @@
-# Implementation by Haley Anderson
+# Integration with project by Haley Anderson
 
 """
 Yelp Fusion API code sample.
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     main()
 
 
-# keysYelp API Keys
+# keys -- Yelp API Keys
 
 #Client ID
 #rJJff6pwpjdHJWV_Jp8Zkw

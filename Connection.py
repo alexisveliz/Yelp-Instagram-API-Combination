@@ -9,6 +9,14 @@ from urllib.error import HTTPError
 # term = input("What kind of food are you looking for?\nExamples: bars, dinner, Thai, etc\nResponse: ")
 # Sample inputs for testing only
 
+# Function to call Yelp API that is used in the UI. This brings up the top result for each search term and
+# location pair.
+# If first translates the input into the correct form for the API and then queries the Yelp API, methods of
+# which are located in the YelpAPI.py file.
+# It throws an HTTP error if the Yelp API cannot be accessed
+
+# Yelp API information can be found at: http://www.yelp.com/developers/v3/documentation
+
 def YelpSearch(location, term):
     SEARCH_LIMIT = 5
 

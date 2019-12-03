@@ -2,7 +2,7 @@
 # Collects all files to create a web app at http://localhost:8080 using Bottle
 #
 # Owners: Haley Anderson, Aimee Bowen, Alejandro Ferrer-Peasley, Elise Mayo, Alexis Veliz
-# Date: November 19, 2019
+# Date: December 3, 2019
 
 from bottle import route, template, request, static_file, run #http://bottlepy.org
 import Connection as Connection
@@ -45,7 +45,6 @@ def search():
     return template('base', code=search_form)
 
 # Results: Gets the user input from the above form and prints what the search terms were
-# TODO: Create a new template for results that outputs the dictionary as links 
 @route('/results', method='POST')
 def show_results():
     term = request.forms.get('term')
