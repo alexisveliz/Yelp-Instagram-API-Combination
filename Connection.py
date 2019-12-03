@@ -1,4 +1,4 @@
-# Implementation by Haley Anderson and Elise May
+# Implementation by Haley Anderson
 
 import YelpAPI as YelpAPI
 import argparse
