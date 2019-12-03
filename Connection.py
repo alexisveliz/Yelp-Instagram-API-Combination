@@ -3,6 +3,7 @@
 import YelpAPI as YelpAPI
 import argparse
 import requests
+from urllib2 import HTTPError
 
 # location = input("Where are you looking to eat?\nCurrently Supported Locations: Los Angeles, San Francisco, Seattle\nLocation: ")
 # term = input("What kind of food are you looking for?\nExamples: bars, dinner, Thai, etc\nResponse: ")
@@ -32,4 +33,4 @@ def YelpSearch(location, term):
             )
         )
         
-YelpSearch("Seattle", "bars")
+YelpSearch("Seattle", "thai")
