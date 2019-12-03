@@ -11,8 +11,13 @@ restaurant = "restaurant"
 
 # adds the main CSS styles
 @route('/style.css')
-def server_static(filepath="style.css"):
+def style(filepath="style.css"):
     return static_file(filepath, root='')
+
+#adds the images used
+@route('/pictures/<filename>')
+def server_static(filename):
+    return static_file(filename, root='pictures')
 
 # Home/Search: Creates a form for searching for a term & location and applies the base HTML layout
 @route('/')
@@ -45,15 +50,15 @@ def search():
 def show_results():
     term = request.forms.get('term')
     location = request.forms.get('location')
-    results_dict = Connection.YelpSearch(location,term)
-    link = "<a href='/"+results_dict['name']+"'>" + results_dict['name'] + "</a>"
-    return template('base', code=link)
-    
-
-#TODO: Create a template that gets Instagram images and Yelp info and displays them
-@route('/<name>')
-def show_info(name):
-    return template('base', code=name)
+    results = Connection.YelpSearch(location,term)
+    picture = '/pictures/'
+    if location == "los angeles":
+        picture = picture + "losangeles.jpg"
+    elif location == "san francisco":
+        picture = picture + "sanfrancisco.jpg"
+    else:
+        picture = picture + "seattle.jpg"
+    return template('results', term=term, location=location, name=results['name'], picture=picture)
 
 # Generates the webpages at http://localhost:8080 in debug mode
 run(host='localhost', port=8080, debug=True)
