@@ -21,7 +21,7 @@ def YelpSearch(location, term):
     input_values = parser.parse_args()
 
     try:
-        YelpAPI.query_api(input_values.term, input_values.location)
+        return YelpAPI.query_api(input_values.term, input_values.location)
     except HTTPError as error:
         sys.exit(
             'Encountered HTTP error {0} on {1}:\n {2}\nAbort program.'.format(
