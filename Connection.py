@@ -13,7 +13,7 @@ from urllib.error import HTTPError
 # location pair.
 # If first translates the input into the correct form for the API and then queries the Yelp API, methods of
 # which are located in the YelpAPI.py file.
-# It throws an HTTP error if the Yelp API cannot be accessed
+# It throws an error if the Yelp API cannot be accessed
 
 # Yelp API information can be found at: http://www.yelp.com/developers/v3/documentation
 
@@ -32,7 +32,7 @@ def YelpSearch(location, term):
 
     try:
         return YelpAPI.query_api(input_values.term, input_values.location)
-    except HTTPError as error:
+    except:
         sys.exit(
             'Encountered HTTP error {0} on {1}:\n {2}\nAbort program.'.format(
                 error.code,
