@@ -1,4 +1,4 @@
-# Implementation by Haley Anderson
+# Integration with project by Haley Anderson
 
 """
 Yelp Fusion API code sample.
@@ -76,22 +76,6 @@ def request(host, path, api_key, url_params=None):
 
     response = response.json()
 
-    #return translateJson(response)
-    return response
-
-def translateJson(response):
-    jsonResponse = json.dumps(response)
-    name = jsonResponse['name']
-    categories = jsonResponse["categories"]["title"]
-    location = jsonResponse["location"]["display_address"]
-    phone = jsonResponse["display_phone"]
-    #hours = json_response
-
-    print(name)
-    print(categories)
-    print(location)
-    print(phone)
-
     return response
 
 
@@ -147,8 +131,7 @@ def query_api(term, location):
             len(businesses), business_id))
     response = get_business(API_KEY, business_id)
 
-    print(u'Result for business "{0}" found:'.format(business_id))
-    pprint.pprint(response, indent=2)
+    return response
 
 
 def main():
@@ -183,7 +166,7 @@ if __name__ == '__main__':
     main()
 
 
-# keysYelp API Keys
+# keys -- Yelp API Keys
 
 #Client ID
 #rJJff6pwpjdHJWV_Jp8Zkw
